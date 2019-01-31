@@ -10,4 +10,12 @@ namespace Hyse.Tools.ExpressionReplacer
             return generator;
         }
     }
+
+    public class Apply
+    {
+        public static TValue This<T, TValue>(T surname, Expression<Func<T, TValue>> twoLastChars)
+        {
+            return default(TValue);
+        }
+    }
 }
