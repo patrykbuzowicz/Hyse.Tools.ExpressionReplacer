@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Linq;
+using System.Linq.Expressions;
 
 namespace Hyse.Tools.ExpressionReplacer.Equality
 {
@@ -14,9 +15,18 @@ namespace Hyse.Tools.ExpressionReplacer.Equality
 
         public override bool Equals(ExpressionEqual other)
         {
-            return other is MethodCallExpressionEqual equal &&
-                   // consider _node.Arguments
-                   _node.Method.Equals(equal._node.Method);
+            if (!(other is MethodCallExpressionEqual equal))
+                return false;
+
+            if (!_node.Method.Equals(equal._node.Method))
+                return false;
+
+            if (_node.Arguments.Count != equal._node.Arguments.Count)
+                return false;
+
+            return _node.Arguments
+                .Zip(equal._node.Arguments, (left, right) => new {left, right})
+                .All(args => ExpressionComparer.Compare(args.left, args.right));
         }
     }
 }
