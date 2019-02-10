@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace Hyse.Tools.ExpressionComparer.Equality
 {
-    internal class ExpressionComparer
+    public class ExpressionComparer
     {
         public static bool Compare(Expression x, Expression y)
         {

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hyse.Tools.ExpressionComparer\Hyse.Tools.ExpressionComparer.csproj" />
     <ProjectReference Include="..\Hyse.Tools.ExpressionReplacer\Hyse.Tools.ExpressionReplacer.csproj" />
   </ItemGroup>
 

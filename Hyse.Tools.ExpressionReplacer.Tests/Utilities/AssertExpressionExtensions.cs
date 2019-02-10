@@ -1,6 +1,5 @@
-﻿using System;
+﻿using FluentAssertions;
 using System.Linq.Expressions;
-using FluentAssertions;
 
 namespace Hyse.Tools.ExpressionReplacer.Tests.Utilities
 {
@@ -8,7 +7,8 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Utilities
     {
         public static void ShouldBeEquivalentToExpression(this Expression expression, Expression expected)
         {
-            expression.ToString().Should().Be(expected.ToString());
+            var comparisonResult = ExpressionComparer.Equality.ExpressionComparer.Compare(expression, expected);
+            comparisonResult.Should().BeTrue();
         }
     }
 }
