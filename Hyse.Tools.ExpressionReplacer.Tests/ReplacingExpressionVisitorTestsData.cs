@@ -50,6 +50,13 @@ namespace Hyse.Tools.ExpressionReplacer.Tests
                 Expected = x => x.Name + x.Surname == "testing" ||
                                 x.Age > 18
             };
+
+            yield return new TestCase
+            {
+                Reason = "Given expression with AND to apply then it should apply the expression",
+                Expression = x => x.Age == 20 && Apply.This(x, ExampleExpressions.NameAndSurnameAssertion),
+                Expected = x => x.Age == 20 && x.Name.EndsWith("John") && x.Surname.StartsWith("Doe")
+            };
         }
     }
 }

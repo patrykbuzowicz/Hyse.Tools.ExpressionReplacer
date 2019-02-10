@@ -13,5 +13,8 @@ namespace Hyse.Tools.ExpressionReplacer.Tests
         public static readonly Expression<Func<ExampleModel, bool>> NameAssertion = x => x.Name.StartsWith("someone");
         public static readonly Expression<Func<ExampleModel, bool>> SurnameAssertion = x => x.Surname.StartsWith("something");
         public static readonly Expression<Func<ExampleModel, bool>> AgeAssertion = x => x.Age > 18;
+
+        public static readonly Expression<Func<ExampleModel, bool>> NameAndSurnameAssertion =
+            x => x.Name.EndsWith("John") && x.Surname.StartsWith("Doe");
     }
 }
