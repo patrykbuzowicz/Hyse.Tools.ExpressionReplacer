@@ -154,6 +154,35 @@ namespace Hyse.Tools.ExpressionComparer.Tests.Equality
                 Right = x => !(x.Name == "test2"),
                 Expected = false
             };
+
+            yield return new TestCase
+            {
+                Left = x => x.Age > 30 &&
+                            Method(),
+                Right = x => x.Age > 30 &&
+                             x.Age < 40,
+                Expected = false
+            };
+
+            yield return new TestCase
+            {
+                Left = x => Method() &&
+                            x.Age > 30,
+                Right = x => Method() &&
+                             x.Age > 30,
+                Expected = true
+            };
+
+            yield return new TestCase
+            {
+                Left = x => Method() &&
+                            x.Age > 30,
+                Right = x => x.Age > 30 &&
+                             Method(),
+                Expected = false
+            };
         }
+
+        private static bool Method() => true;
     }
 }

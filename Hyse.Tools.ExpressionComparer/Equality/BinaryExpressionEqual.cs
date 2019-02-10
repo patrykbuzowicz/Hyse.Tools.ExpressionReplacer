@@ -14,14 +14,14 @@ namespace Hyse.Tools.ExpressionComparer.Equality
 
         public override bool Equals(ExpressionEqual other)
         {
-            if (!(other is BinaryExpressionEqual equal)) return false;
-
-            if (_node.Method is null && equal._node.Method is null)
-                return _node.NodeType.Equals(equal._node.NodeType);
-            if (_node.Method is null || equal._node.Method is null)
+            if (!(other is BinaryExpressionEqual equal))
                 return false;
-
-            if (!_node.Method.Equals(equal._node.Method))
+            
+            if (!_node.NodeType.Equals(equal._node.NodeType))
+                return false;
+            if (_node.Method is null ^ equal._node.Method is null)
+                return false;
+            if (_node.Method != null && !_node.Method.Equals(equal._node.Method))
                 return false;
 
             return ExpressionComparer.Compare(_node.Left, equal._node.Left) &&
