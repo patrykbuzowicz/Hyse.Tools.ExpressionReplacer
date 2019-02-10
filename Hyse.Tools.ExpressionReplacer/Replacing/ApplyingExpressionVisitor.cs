@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Hyse.Tools.ExpressionReplacer
+namespace Hyse.Tools.ExpressionReplacer.Replacing
 {
     internal class ApplyingExpressionVisitor : ExpressionVisitor
     {

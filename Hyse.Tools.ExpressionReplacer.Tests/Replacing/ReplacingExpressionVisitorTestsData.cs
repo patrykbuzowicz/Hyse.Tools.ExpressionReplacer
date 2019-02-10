@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Hyse.Tools.ExpressionReplacer.Tests
+namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
 {
     public class ReplacingExpressionVisitorTestsData : List<object[]>
     {

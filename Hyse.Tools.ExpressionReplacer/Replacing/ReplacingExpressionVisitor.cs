@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Hyse.Tools.ExpressionReplacer
+namespace Hyse.Tools.ExpressionReplacer.Replacing
 {
     internal class ReplacingExpressionVisitor : ExpressionVisitor
     {

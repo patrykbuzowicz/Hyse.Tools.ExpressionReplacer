@@ -1,7 +1,8 @@
-﻿using Hyse.Tools.ExpressionReplacer.Tests.Utilities;
+﻿using Hyse.Tools.ExpressionReplacer.Replacing;
+using Hyse.Tools.ExpressionReplacer.Tests.Utilities;
 using Xunit;
 
-namespace Hyse.Tools.ExpressionReplacer.Tests
+namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
 {
     public class ReplacingExpressionVisitorTests
     {
