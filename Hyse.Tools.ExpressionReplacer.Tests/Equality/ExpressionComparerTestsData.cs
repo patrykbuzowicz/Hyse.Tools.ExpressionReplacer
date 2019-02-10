@@ -145,6 +145,15 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Equality
                 Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1, StringComparison.OrdinalIgnoreCase)),
                 Expected = false
             };
+
+            yield return new TestCase
+            {
+                // ReSharper disable once NegativeEqualityExpression
+                Left = x => !(x.Name == "test1"),
+                // ReSharper disable once NegativeEqualityExpression
+                Right = x => !(x.Name == "test2"),
+                Expected = false
+            };
         }
     }
 }
