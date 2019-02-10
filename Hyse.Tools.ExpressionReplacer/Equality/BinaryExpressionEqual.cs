@@ -21,7 +21,11 @@ namespace Hyse.Tools.ExpressionReplacer.Equality
             if (_node.Method is null || equal._node.Method is null)
                 return false;
 
-            return _node.Method.Equals(equal._node.Method);
+            if (!_node.Method.Equals(equal._node.Method))
+                return false;
+
+            return ExpressionComparer.Compare(_node.Left, equal._node.Left) &&
+                   ExpressionComparer.Compare(_node.Right, equal._node.Right);
         }
     }
 }

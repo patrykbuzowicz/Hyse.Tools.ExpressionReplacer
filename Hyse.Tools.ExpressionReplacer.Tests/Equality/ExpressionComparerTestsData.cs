@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Hyse.Tools.ExpressionReplacer.Tests.Equality
@@ -7,7 +8,7 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Equality
     {
         public ExpressionComparerTestsData()
         {
-            AddRange(GetCases().Select(x => new object[] {x}));
+            AddRange(GetCases().Select(x => new object[] { x }));
         }
 
         private IEnumerable<TestCase> GetCases()
@@ -93,6 +94,55 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Equality
             {
                 Left = x => x.Surname.StartsWith("x"),
                 Right = x => x.Surname.EndsWith("x"),
+                Expected = false
+            };
+
+            yield return new TestCase
+            {
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Left = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1)),
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1)),
+                Expected = true
+            };
+
+            yield return new TestCase
+            {
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Left = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1)),
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1) + 2),
+                Expected = false
+            };
+
+            yield return new TestCase
+            {
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Left = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1) + 2),
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1) + 2),
+                Expected = true
+            };
+
+            yield return new TestCase
+            {
+                // ReSharper disable once StringIndexOfIsCultureSpecific.1
+                Left = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1)),
+                Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1, StringComparison.Ordinal)),
+                Expected = false
+            };
+
+            yield return new TestCase
+            {
+                Left = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1, StringComparison.Ordinal)),
+                Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1, StringComparison.Ordinal)),
+                Expected = true
+            };
+
+            yield return new TestCase
+            {
+                Left = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1, StringComparison.Ordinal)),
+                Right = x => x.Name.Substring(x.Name.IndexOf(x.Surname + 1, StringComparison.OrdinalIgnoreCase)),
                 Expected = false
             };
         }
