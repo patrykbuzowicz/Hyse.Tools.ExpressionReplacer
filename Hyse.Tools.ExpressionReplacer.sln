@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyse.Tools.ExpressionCompar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyse.Tools.ExpressionComparer.Tests", "Hyse.Tools.ExpressionComparer.Tests\Hyse.Tools.ExpressionComparer.Tests.csproj", "{5588670C-6321-4F21-84DF-705687D2AEBC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExpressionComparer", "ExpressionComparer", "{CD146AC9-3E7F-4892-9F8D-01337AF49FF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExpressionReplacer", "ExpressionReplacer", "{C54E08B3-66A9-444F-A9BF-4737E8BB1BED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB7BDAF2-9D8C-4DDF-9031-6F5742EFF82E} = {C54E08B3-66A9-444F-A9BF-4737E8BB1BED}
+		{6F88C970-B7F8-4292-809B-1756C35A23E1} = {C54E08B3-66A9-444F-A9BF-4737E8BB1BED}
+		{4FC5EA59-F8D1-4984-A9C3-DEE4BFC50EE1} = {CD146AC9-3E7F-4892-9F8D-01337AF49FF8}
+		{5588670C-6321-4F21-84DF-705687D2AEBC} = {CD146AC9-3E7F-4892-9F8D-01337AF49FF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20F1A4E0-76CC-44E8-93F6-9D157C6026F7}
