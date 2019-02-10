@@ -51,12 +51,15 @@ namespace Hyse.Tools.ExpressionReplacer.Tests
                                 x.Age > 18
             };
 
+            // ReSharper disable ArrangeRedundantParentheses
             yield return new TestCase
             {
                 Reason = "Given expression with AND to apply then it should apply the expression",
                 Expression = x => x.Age == 20 && Apply.This(x, ExampleExpressions.NameAndSurnameAssertion),
-                Expected = x => x.Age == 20 && x.Name.EndsWith("John") && x.Surname.StartsWith("Doe")
+                Expected = x => x.Age == 20 && (x.Name.EndsWith("John") && 
+                                                x.Surname.StartsWith("Doe"))
             };
+            // ReSharper restore ArrangeRedundantParentheses
         }
     }
 }
