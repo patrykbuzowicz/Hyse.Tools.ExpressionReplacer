@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Hyse.Tools.ExpressionReplacer.Equality
+namespace Hyse.Tools.ExpressionComparer.Equality
 {
     internal class ExpressionEqualityCollectorVisitor : ExpressionVisitor
     {

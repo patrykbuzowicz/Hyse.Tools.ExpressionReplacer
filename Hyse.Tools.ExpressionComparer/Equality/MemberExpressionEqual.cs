@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Hyse.Tools.ExpressionReplacer.Equality
+namespace Hyse.Tools.ExpressionComparer.Equality
 {
     internal class MemberExpressionEqual : ExpressionEqual
     {

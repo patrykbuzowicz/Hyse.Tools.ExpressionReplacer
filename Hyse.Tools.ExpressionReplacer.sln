@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyse.Tools.ExpressionReplacer", "Hyse.Tools.ExpressionReplacer\Hyse.Tools.ExpressionReplacer.csproj", "{AB7BDAF2-9D8C-4DDF-9031-6F5742EFF82E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyse.Tools.ExpressionReplacer", "Hyse.Tools.ExpressionReplacer\Hyse.Tools.ExpressionReplacer.csproj", "{AB7BDAF2-9D8C-4DDF-9031-6F5742EFF82E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyse.Tools.ExpressionReplacer.Tests", "Hyse.Tools.ExpressionReplacer.Tests\Hyse.Tools.ExpressionReplacer.Tests.csproj", "{6F88C970-B7F8-4292-809B-1756C35A23E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyse.Tools.ExpressionReplacer.Tests", "Hyse.Tools.ExpressionReplacer.Tests\Hyse.Tools.ExpressionReplacer.Tests.csproj", "{6F88C970-B7F8-4292-809B-1756C35A23E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyse.Tools.ExpressionComparer", "Hyse.Tools.ExpressionComparer\Hyse.Tools.ExpressionComparer.csproj", "{4FC5EA59-F8D1-4984-A9C3-DEE4BFC50EE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hyse.Tools.ExpressionComparer.Tests", "Hyse.Tools.ExpressionComparer.Tests\Hyse.Tools.ExpressionComparer.Tests.csproj", "{5588670C-6321-4F21-84DF-705687D2AEBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{6F88C970-B7F8-4292-809B-1756C35A23E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F88C970-B7F8-4292-809B-1756C35A23E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F88C970-B7F8-4292-809B-1756C35A23E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC5EA59-F8D1-4984-A9C3-DEE4BFC50EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC5EA59-F8D1-4984-A9C3-DEE4BFC50EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC5EA59-F8D1-4984-A9C3-DEE4BFC50EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC5EA59-F8D1-4984-A9C3-DEE4BFC50EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5588670C-6321-4F21-84DF-705687D2AEBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5588670C-6321-4F21-84DF-705687D2AEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5588670C-6321-4F21-84DF-705687D2AEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5588670C-6321-4F21-84DF-705687D2AEBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

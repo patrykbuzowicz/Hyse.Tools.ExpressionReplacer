@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Hyse.Tools.ExpressionReplacer.Tests.Equality
+namespace Hyse.Tools.ExpressionComparer.Tests.Equality
 {
     public class ExpressionComparerTestsData : List<object[]>
     {
