@@ -4,26 +4,28 @@ using Xunit;
 
 namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
 {
-    public class ReplacingExpressionVisitorTests
+    public partial class ReplacingExpressionVisitorTests
     {
-        private readonly ReplacingExpressionVisitor _subject;
-
-        public ReplacingExpressionVisitorTests()
+        public class Replacing
         {
-            _subject = new ReplacingExpressionVisitor();
-        }
+            private readonly ReplacingExpressionVisitor _subject;
 
-        [Theory]
-        [ClassData(typeof(ReplacingExpressionVisitorTestsData))]
-        [ClassData(typeof(VariousWaysOfPassingExpression))]
-        public void Test(TestCase testCase)
-        {
-            var expressionMethodCall = testCase.Expression.Body;
-            var expectedMethodCall = testCase.Expected.Body;
+            public Replacing()
+            {
+                _subject = new ReplacingExpressionVisitor();
+            }
 
-            var result = _subject.Visit(expressionMethodCall);
+            [Theory]
+            [ClassData(typeof(ReplacingExpressionVisitorTestsData))]
+            public void Test(TestCase testCase)
+            {
+                var expressionMethodCall = testCase.Expression.Body;
+                var expectedMethodCall = testCase.Expected.Body;
 
-            result.ShouldBeEquivalentToExpression(expectedMethodCall);
+                var result = _subject.Visit(expressionMethodCall);
+
+                result.ShouldBeEquivalentToExpression(expectedMethodCall);
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Hyse.Tools.ExpressionReplacer.Replacing
         private LambdaExpression ExtractInnerExpression(Expression argument)
         {
             if (!(argument is MemberExpression memberExpression))
-                throw new InvalidOperationException($"Not supported expression type: [{argument.GetType()}]");
+                throw new ReplacingException($"Not supported expression type: [{argument.GetType()}]");
 
             var accessorExpression = Expression.Lambda<Func<LambdaExpression>>(memberExpression);
             var compiledAccessor = accessorExpression.Compile();
