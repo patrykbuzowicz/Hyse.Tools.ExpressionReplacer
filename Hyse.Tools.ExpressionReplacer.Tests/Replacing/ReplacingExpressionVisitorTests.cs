@@ -13,7 +13,9 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
             _subject = new ReplacingExpressionVisitor();
         }
 
-        [Theory, ClassData(typeof(ReplacingExpressionVisitorTestsData))]
+        [Theory]
+        [ClassData(typeof(ReplacingExpressionVisitorTestsData))]
+        [ClassData(typeof(VariousWaysOfPassingExpression))]
         public void Test(TestCase testCase)
         {
             var expressionMethodCall = testCase.Expression.Body;

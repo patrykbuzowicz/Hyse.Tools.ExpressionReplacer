@@ -27,12 +27,9 @@ namespace Hyse.Tools.ExpressionReplacer.Replacing
             if (!(argument is MemberExpression memberExpression))
                 throw new InvalidOperationException($"Not supported expression type: [{argument.GetType()}]");
 
-            if (memberExpression.Member is FieldInfo field)
-                return field.GetValue(null) as LambdaExpression;
-            if (memberExpression.Member is PropertyInfo property)
-                return property.GetValue(null) as LambdaExpression;
-
-            throw new InvalidOperationException($"Not supported member access: [{memberExpression.Member.GetType()}]");
+            var accessorExpression = Expression.Lambda<Func<LambdaExpression>>(memberExpression);
+            var compiledAccessor = accessorExpression.Compile();
+            return compiledAccessor();
         }
 
         private Expression ApplyExpression(LambdaExpression innerExpression, Expression argument)
