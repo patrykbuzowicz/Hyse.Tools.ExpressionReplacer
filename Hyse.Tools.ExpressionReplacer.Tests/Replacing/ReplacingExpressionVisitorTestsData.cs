@@ -1,16 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
 {
-    public class ReplacingExpressionVisitorTestsData : List<object[]>
+    public class ReplacingExpressionVisitorTestsData : TestsDataBase<TestCase>
     {
-        public ReplacingExpressionVisitorTestsData()
-        {
-            AddRange(GetCases().Select(x => new object[] { x }));
-        }
-
-        private IEnumerable<TestCase> GetCases()
+        protected override IEnumerable<TestCase> GetCases()
         {
             yield return new TestCase
             {
@@ -56,7 +50,7 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
             {
                 Reason = "Given expression with AND to apply then it should apply the expression",
                 Expression = x => x.Age == 20 && Apply.This(x, ExampleExpressions.NameAndSurnameAssertion),
-                Expected = x => x.Age == 20 && (x.Name.EndsWith("John") && 
+                Expected = x => x.Age == 20 && (x.Name.EndsWith("John") &&
                                                 x.Surname.StartsWith("Doe"))
             };
             // ReSharper restore ArrangeRedundantParentheses
