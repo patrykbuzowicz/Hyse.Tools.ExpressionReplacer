@@ -87,6 +87,13 @@ namespace Hyse.Tools.ExpressionReplacer.Tests.Replacing
                                 x.Surname.StartsWith("something") &&
                                 x.Age > 18
             };
+
+            yield return new TestCase
+            {
+                Reason = "Inserts expression into ternary operator",
+                Expression = x => Apply.This(x, ExampleExpressions.AgeAssertion) ? "adult" : "underage",
+                Expected = x => x.Age > 18 ? "adult" : "underage",
+            };
         }
     }
 }
